@@ -60,7 +60,7 @@ export function renderSidebar(state) {
   return `
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
-        <img class="brand-mark" src="./logo.svg" alt="DUE" width="42" height="42" />
+        <img class="brand-mark" src="./logo.jpeg" alt="DUE" width="42" height="42" />
         <div class="brand-text">
           <strong>DUE</strong>
           <span>Delivery Ultimate Express</span>

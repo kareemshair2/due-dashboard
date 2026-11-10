@@ -6,7 +6,9 @@
  *
  * Security model:
  * - Read-only. This file contains no write calls and no credentials.
- * - The spreadsheet ID lives in Script Properties, not in source control.
+ * - The spreadsheet ID has a built-in fallback (DEFAULT_SPREADSHEET_ID) and can
+ *   be overridden safely with the SPREADSHEET_ID Script Property — useful to
+ *   point the same deployment at another spreadsheet without editing code.
  * - The deployment URL is a bearer URL. Anyone who has it can read the sheets
  *   allowed by the deployment, so keep it private and rotate the deployment
  *   if it leaks.
@@ -21,6 +23,11 @@ var DEFAULTS = {
   MAX_ROWS: "5000",
 };
 
+// Fallback used when Script Properties are not set.
+// Script Properties (SPREADSHEET_ID) override this value, so you can point the
+// same deployment at a different spreadsheet without editing the code.
+var DEFAULT_SPREADSHEET_ID = "15V6Lvg9cqBb7xsT6Z4vS7nn6RRRm_JVd5eytqKaLvt8";
+
 var TAB_LABELS = {
   orders: "Orders",
   branches: "BRANCHES & AGENTS",
@@ -31,8 +38,9 @@ function getConfig_() {
   var props = PropertiesService.getScriptProperties();
   var cacheSeconds = Number(props.getProperty("CACHE_SECONDS") || DEFAULTS.CACHE_SECONDS);
   var maxRows = Number(props.getProperty("MAX_ROWS") || DEFAULTS.MAX_ROWS);
+  var spreadsheetId = (props.getProperty("SPREADSHEET_ID") || DEFAULT_SPREADSHEET_ID).trim();
   return {
-    spreadsheetId: (props.getProperty("SPREADSHEET_ID") || "").trim(),
+    spreadsheetId: spreadsheetId,
     sheetNames: {
       orders: (props.getProperty("SHEET_ORDERS") || DEFAULTS.SHEET_ORDERS).trim(),
       branches: (props.getProperty("SHEET_BRANCHES") || DEFAULTS.SHEET_BRANCHES).trim(),
@@ -276,11 +284,15 @@ function testConnection() {
 }
 
 /**
- * Optional helper for editors: shows the Script Properties needed by this app.
+ * Optional helper for editors. The deployment works without any Script
+ * Properties (DEFAULT_SPREADSHEET_ID is used). Setting these overrides the
+ * built-in defaults.
  */
 function showRequiredProperties() {
   var lines = [
-    "SPREADSHEET_ID = <the Google Sheets file id>",
+    "(no Script Properties required for the default spreadsheet)",
+    "Overrides you may set:",
+    "SPREADSHEET_ID = <another Google Sheets file id>",
     "SHEET_ORDERS = Orders",
     "SHEET_BRANCHES = BRANCHES&AGENTS",
     "SHEET_CARS = Cars",

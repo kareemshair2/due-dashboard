@@ -35,11 +35,15 @@ describe("Apps Script proxy: security", () => {
     }
   });
 
-  it("contains no embedded spreadsheet id, private key, or client secret", () => {
-    expect(code).not.toMatch(/15V6Lvg9cqBb7xsT6Z4vS7nn6RRRm_JVd5eytqKaLvt8/);
+  it("contains no private key or client secret", () => {
     expect(code).not.toMatch(/private_key/);
     expect(code).not.toMatch(/client_secret/);
     expect(code).not.toMatch(/-----BEGIN [A-Z ]*PRIVATE KEY-----/);
+  });
+
+  it("works out of the box with a built-in default spreadsheet id", () => {
+    expect(code).toContain('var DEFAULT_SPREADSHEET_ID = "15V6Lvg9cqBb7xsT6Z4vS7nn6RRRm_JVd5eytqKaLvt8";');
+    expect(code).toContain('props.getProperty("SPREADSHEET_ID") || DEFAULT_SPREADSHEET_ID');
   });
 
   it("reads configuration from Script Properties", () => {

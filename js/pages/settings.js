@@ -251,9 +251,9 @@ function aboutCard(state) {
         <div class="form-row">
           <div class="form-row-copy">
             <strong>الشعار</strong>
-            <span>يُستخدم شعار مؤقت حتى توفير ملف الشعار الرسمي.</span>
+            <span>الشعار الرسمي لـ DUE — Delivery Ultimate Express.</span>
           </div>
-          <img src="./logo.svg" alt="DUE" width="40" height="40" style="border-radius:12px" />
+          <img src="./logo.jpeg" alt="DUE" width="40" height="40" style="border-radius:12px" />
         </div>
       </div>
     </section>
