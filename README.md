@@ -5,9 +5,10 @@
 - الواجهة: JavaScript ES Modules + Vite، بدون إطار عمل.
 - الرسوم: Chart.js.
 - الأيقونات: Lucide.
-- الخط: IBM Plex Sans Arabic.
+- الخطوط: Changa (عناوين) + Almarai (نصوص).
+- الهوية البصرية: نفس نظام AutoFlex — أحمر قانئ `#A40E0E` مع غامق `#6E0808` ولامع `#D10000` على خلفية كريمية `#F4F3EF`.
 - التخزين المؤقت: IndexedDB.
-- الاختبارات: Vitest (101 اختبارًا).
+- الاختبارات: Vitest (112 اختبارًا).
 - النشر: GitHub Pages + وكيل Google Apps Script اختياري.
 
 ## التشغيل السريع

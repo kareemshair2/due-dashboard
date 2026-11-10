@@ -373,7 +373,7 @@ function mount(root, state) {
                 label: "المسافة (كم)",
                 data: summary.byDay.map((day) => day.distance),
                 borderColor: CHART_COLORS[0],
-                backgroundColor: "rgba(255, 64, 21, 0.12)",
+                backgroundColor: "rgba(164, 14, 14, 0.12)",
                 fill: true,
                 tension: 0.35,
                 borderWidth: 2,

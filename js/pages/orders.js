@@ -309,7 +309,7 @@ function mount(root, state) {
                 label: "إجمالي الكمية",
                 data: summary.byDay.map((day) => day.quantity),
                 borderColor: CHART_COLORS[0],
-                backgroundColor: "rgba(255, 64, 21, 0.12)",
+                backgroundColor: "rgba(164, 14, 14, 0.12)",
                 fill: true,
                 tension: 0.35,
                 borderWidth: 2,
@@ -374,7 +374,7 @@ function mount(root, state) {
                 label: "الكمية",
                 data: customers.map((item) => item.quantity),
                 backgroundColor: customers.map((_, index) =>
-                  index === 0 ? CHART_COLORS[0] : "rgba(255, 64, 21, 0.32)",
+                  index === 0 ? CHART_COLORS[0] : "rgba(164, 14, 14, 0.32)",
                 ),
                 borderRadius: 5,
                 borderSkipped: false,

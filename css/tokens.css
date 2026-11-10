@@ -1,49 +1,53 @@
+/* AutoFlex-style identity applied to DUE:
+   deep قانئ red (#A40E0E) brand, bright red (#D10000) accent, warm cream background,
+   Changa (display) + Almarai (body) — same system used by the AutoFlex dashboard. */
 :root {
-  --font-ar: "IBM Plex Sans Arabic", "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
-  --font-en: "IBM Plex Sans", "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+  --font-display: "Changa", "Almarai", "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+  --font-ar: "Almarai", "Changa", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-en: "Changa", "Almarai", "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
 
-  --due-orange: #ff4015;
-  --due-orange-600: #e6360f;
-  --due-orange-700: #c92d0b;
-  --due-orange-soft: #fff1ec;
-  --due-orange-soft-2: #ffe3d9;
+  --due-orange: #a40e0e;
+  --due-orange-600: #d10000;
+  --due-orange-700: #6e0808;
+  --due-orange-soft: #f7ecec;
+  --due-orange-soft-2: #f2d4d4;
 
-  --ink: #202020;
-  --ink-2: #343434;
-  --muted: #6b7280;
-  --muted-2: #8a9099;
-  --bg: #f7f7f7;
+  --ink: #1b2733;
+  --ink-2: #2a3947;
+  --muted: #6b7a88;
+  --muted-2: #93a0ac;
+  --bg: #f4f3ef;
   --surface: #ffffff;
-  --surface-2: #fbfbfb;
-  --surface-3: #f2f2f2;
-  --border: #e8e8e8;
-  --border-strong: #d9d9d9;
+  --surface-2: #fdfdfb;
+  --surface-3: #efede7;
+  --border: #e4e7ea;
+  --border-strong: #d8d5cc;
 
-  --success: #16a34a;
-  --success-soft: #eaf7ef;
-  --warning: #d97706;
-  --warning-soft: #fff7e8;
-  --danger: #dc2626;
-  --danger-soft: #fdeeee;
+  --success: #2e9e6b;
+  --success-soft: #e9f6ef;
+  --warning: #c96f2c;
+  --warning-soft: #fbf0e4;
+  --danger: #c0392b;
+  --danger-soft: #fbdfdc;
   --info: #2563eb;
   --info-soft: #edf3ff;
 
-  --chart-1: #ff4015;
-  --chart-2: #202020;
-  --chart-3: #8a9099;
-  --chart-4: #16a34a;
-  --chart-5: #d97706;
-  --chart-6: #2563eb;
-  --chart-7: #7c3aed;
+  --chart-1: #a40e0e;
+  --chart-2: #1b2733;
+  --chart-3: #6b7a88;
+  --chart-4: #2e9e6b;
+  --chart-5: #c96f2c;
+  --chart-6: #d10000;
+  --chart-7: #6e0808;
 
-  --radius-sm: 8px;
+  --radius-sm: 10px;
   --radius: 14px;
   --radius-lg: 18px;
   --radius-xl: 24px;
 
-  --shadow-xs: 0 1px 2px rgba(32, 32, 32, 0.04);
-  --shadow-sm: 0 1px 2px rgba(32, 32, 32, 0.04), 0 6px 18px rgba(32, 32, 32, 0.035);
-  --shadow-md: 0 12px 34px rgba(32, 32, 32, 0.08);
+  --shadow-xs: 0 1px 2px rgba(74, 6, 6, 0.05);
+  --shadow-sm: 0 1px 2px rgba(74, 6, 6, 0.05), 0 10px 28px -14px rgba(74, 6, 6, 0.2);
+  --shadow-md: 0 16px 44px -14px rgba(74, 6, 6, 0.34);
 
   --sidebar-w: 264px;
   --sidebar-w-collapsed: 84px;
@@ -55,22 +59,22 @@
 }
 
 [data-theme="dark"] {
-  --ink: #f4f4f4;
-  --ink-2: #dcdcdc;
-  --muted: #a3a8b0;
-  --muted-2: #7f858d;
-  --bg: #121212;
-  --surface: #1b1b1b;
-  --surface-2: #202020;
-  --surface-3: #262626;
-  --border: #2e2e2e;
-  --border-strong: #3a3a3a;
+  --ink: #f3ece8;
+  --ink-2: #d9cec7;
+  --muted: #a79e96;
+  --muted-2: #7e766e;
+  --bg: #161010;
+  --surface: #201816;
+  --surface-2: #251d1b;
+  --surface-3: #2c2320;
+  --border: #342826;
+  --border-strong: #463531;
 
-  --due-orange: #ff5a33;
-  --due-orange-600: #ff4015;
-  --due-orange-700: #e6360f;
-  --due-orange-soft: #2b1a14;
-  --due-orange-soft-2: #3a2017;
+  --due-orange: #d10000;
+  --due-orange-600: #e63232;
+  --due-orange-700: #a40e0e;
+  --due-orange-soft: #2c1715;
+  --due-orange-soft-2: #3d221f;
 
   --success-soft: #12291b;
   --warning-soft: #2b2111;

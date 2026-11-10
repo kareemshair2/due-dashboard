@@ -98,7 +98,7 @@ function applyTheme(theme) {
   state.theme = theme;
   document.documentElement.dataset.theme = theme;
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "dark" ? "#121212" : "#FF4015");
+  if (meta) meta.setAttribute("content", theme === "dark" ? "#161010" : "#A40E0E");
 }
 
 export function init() {

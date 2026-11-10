@@ -11,8 +11,12 @@
   width: var(--sidebar-w);
   display: flex;
   flex-direction: column;
-  background: var(--surface);
-  border-inline-end: 1px solid var(--border);
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 34px),
+    linear-gradient(160deg, var(--due-orange-700), var(--due-orange) 78%);
+  border-inline-end: 3px solid var(--due-orange-600);
+  color: rgba(255, 255, 255, 0.86);
   transition: width var(--transition-slow), transform var(--transition-slow);
 }
 
@@ -22,7 +26,7 @@
   align-items: center;
   gap: 12px;
   padding: 0 20px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   overflow: hidden;
 }
 
@@ -40,7 +44,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  box-shadow: 0 8px 18px rgba(255, 64, 21, 0.22);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
 }
 
 .brand-text {
@@ -54,10 +58,11 @@
   font-family: var(--font-en);
   font-size: 15px;
   letter-spacing: 0.03em;
+  color: #fff;
 }
 
 .brand-text span {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 10.5px;
   letter-spacing: 0.01em;
 }
@@ -71,7 +76,7 @@
 
 .nav-section-label {
   padding: 0 10px 8px;
-  color: var(--muted-2);
+  color: rgba(255, 255, 255, 0.55);
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -88,22 +93,22 @@
   padding: 0 12px;
   margin-bottom: 4px;
   border-radius: 11px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
   white-space: nowrap;
   transition: background var(--transition), color var(--transition);
 }
 
 .nav-item:hover {
-  background: var(--surface-3);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
   text-decoration: none;
 }
 
 .nav-item.is-active {
-  background: var(--due-orange-soft);
-  color: var(--due-orange-600);
-  font-weight: 600;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-weight: 700;
 }
 
 .nav-item.is-active::before {
@@ -114,7 +119,7 @@
   bottom: 12px;
   width: 3px;
   border-radius: 999px;
-  background: var(--due-orange);
+  background: #fff;
 }
 
 .nav-item .icon {
@@ -135,8 +140,8 @@
   border-radius: 999px;
   display: inline-grid;
   place-items: center;
-  background: var(--danger-soft);
-  color: var(--danger);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   font-family: var(--font-en);
   font-size: 10.5px;
   font-weight: 700;
@@ -144,7 +149,7 @@
 
 .sidebar-footer {
   padding: 14px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .sidebar-status {
@@ -152,10 +157,10 @@
   align-items: center;
   gap: 9px;
   padding: 10px 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
-  background: var(--surface-2);
-  color: var(--muted);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 11.5px;
   white-space: nowrap;
   overflow: hidden;
@@ -189,14 +194,14 @@
   justify-content: center;
   gap: 8px;
   border-radius: 10px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 12px;
   transition: background var(--transition), color var(--transition);
 }
 
 .sidebar-collapse:hover {
-  background: var(--surface-3);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
 }
 
 .app-main {
@@ -261,7 +266,7 @@ body.sidebar-collapsed .sidebar-collapse .icon {
   background: color-mix(in srgb, var(--surface) 88%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid var(--due-orange);
 }
 
 .header-start,

@@ -4,14 +4,14 @@ import { icon } from "../utils/icons.js";
 const registry = new Map();
 
 export const CHART_COLORS = [
-  "#ff4015",
-  "#202020",
-  "#8a9099",
-  "#16a34a",
-  "#d97706",
-  "#2563eb",
-  "#7c3aed",
-  "#db2777",
+  "#a40e0e",
+  "#1b2733",
+  "#6b7a88",
+  "#2e9e6b",
+  "#c96f2c",
+  "#d10000",
+  "#6e0808",
+  "#b8a94e",
 ];
 
 function cssVar(name, fallback) {
@@ -20,7 +20,7 @@ function cssVar(name, fallback) {
 }
 
 export function applyChartDefaults() {
-  const family = '"IBM Plex Sans Arabic", "Segoe UI", sans-serif';
+  const family = '"Almarai", "Changa", "Segoe UI", sans-serif';
   Chart.defaults.font.family = family;
   Chart.defaults.font.size = 11;
   Chart.defaults.color = cssVar("--muted", "#6b7280");

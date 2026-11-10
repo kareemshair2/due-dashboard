@@ -118,7 +118,8 @@
   font-size: 27px;
   line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
+  color: var(--due-orange);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   overflow: hidden;
@@ -266,7 +267,7 @@
 .btn-primary {
   background: var(--due-orange);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(255, 64, 21, 0.2);
+  box-shadow: 0 6px 16px rgba(164, 14, 14, 0.2);
 }
 
 .btn-primary:hover {

@@ -341,7 +341,7 @@ function mount(root, state) {
                 label: "PICK UP",
                 data: summary.list.map((item) => item.pickup),
                 backgroundColor: summary.list.map((_, index) =>
-                  index === 0 ? CHART_COLORS[0] : "rgba(255, 64, 21, 0.32)",
+                  index === 0 ? CHART_COLORS[0] : "rgba(164, 14, 14, 0.32)",
                 ),
                 borderRadius: 5,
                 borderSkipped: false,
