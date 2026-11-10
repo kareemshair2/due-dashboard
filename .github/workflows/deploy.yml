@@ -1,0 +1,63 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Generate production config
+        env:
+          DUE_SPREADSHEET_ID: ${{ vars.DUE_SPREADSHEET_ID }}
+          DUE_PROVIDER: ${{ vars.DUE_PROVIDER || 'apps-script' }}
+          DUE_APPS_SCRIPT_URL: ${{ secrets.DUE_APPS_SCRIPT_URL }}
+          DUE_SHEET_ORDERS: ${{ vars.DUE_SHEET_ORDERS }}
+          DUE_SHEET_BRANCHES: ${{ vars.DUE_SHEET_BRANCHES }}
+          DUE_SHEET_CARS: ${{ vars.DUE_SHEET_CARS }}
+        run: npm run config:ci
+
+      - name: Build
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
