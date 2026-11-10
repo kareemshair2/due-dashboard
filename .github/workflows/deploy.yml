@@ -27,6 +27,12 @@ jobs:
 
       - run: npm ci
 
+      - name: Generate placeholder config
+        run: npm run config:ci
+        env:
+          DUE_SPREADSHEET_ID: ${{ vars.DUE_SPREADSHEET_ID || 'placeholder' }}
+          DUE_PROVIDER: gviz
+
       - name: Type check
         run: npm run check
 
